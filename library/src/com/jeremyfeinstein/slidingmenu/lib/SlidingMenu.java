@@ -319,6 +319,7 @@ public class SlidingMenu extends RelativeLayout {
 			// save ActionBar themes that have transparent assets
 			decorChild.setBackgroundResource(background);
 			decor.removeView(decorChild);
+            decor.removeView(this);
 			decor.addView(this);
 			setContent(decorChild);
 			break;
@@ -328,6 +329,7 @@ public class SlidingMenu extends RelativeLayout {
 			ViewGroup contentParent = (ViewGroup)activity.findViewById(android.R.id.content);
 			View content = contentParent.getChildAt(0);
 			contentParent.removeView(content);
+            contentParent.removeView(this);
 			contentParent.addView(this);
 			setContent(content);
 			// save people from having transparent backgrounds
